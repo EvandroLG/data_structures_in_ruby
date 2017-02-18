@@ -22,7 +22,7 @@ class SinglyLinkedList
     node = create_node data
     @size = @size + 1
 
-    if !@head
+    unless @head
       @head = node
     else
       @tail[:node_next] = node
@@ -35,7 +35,7 @@ class SinglyLinkedList
     node = create_node data
     @size = @size + 1
 
-    if !@head
+    unless @head
       @head = node
       @tail = node
     else
