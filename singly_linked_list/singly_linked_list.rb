@@ -97,4 +97,26 @@ class SinglyLinkedList
     @size = @size - 1
     true
   end
+
+  def remove_by_data data
+    unless @head then return false end
+
+    if @head[:data] == data
+      @size = @size - 1
+      @head = @head[:node_next]
+      return true
+    end
+
+    current = @head
+
+    while current[:node_next] do
+      if current[:node_next][:data] == data
+        @size = @size - 1
+        current[:node_next] = current[:node_next][:node_next]
+        return true
+      end
+    end
+
+    false
+  end
 end
