@@ -11,7 +11,7 @@ class Queue
 
   public
   def enqueue value
-    @store[@size] = value
+    @store[@size + @head] = value
     @size = @size + 1
 
     value
@@ -22,7 +22,7 @@ class Queue
       return
     end
 
-    value = @store.delete[@head]
+    value = @store.delete(@head)
     @size = @size - 1
     @head = @head + 1
 
