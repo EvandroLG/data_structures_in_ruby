@@ -1,6 +1,6 @@
 # encoding: UTF-8
 
-class Stack
+class Queue
   attr_reader :size
 
   def initialize
