@@ -34,6 +34,6 @@ class Queue
       return
     end
 
-    @store.delete[@head]
+    @store[@head]
   end
 end
