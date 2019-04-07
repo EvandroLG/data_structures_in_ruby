@@ -131,6 +131,7 @@ class SinglyLinkedList
       current_node = current_node[:node_next]
     end
 
+    current_node[:node_next] = nil
     @tail = current_node
     @size = @size - 1
 
