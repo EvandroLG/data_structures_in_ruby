@@ -88,4 +88,9 @@ class SinglyLinkedListTest < Test::Unit::TestCase
     assert_equal 'javascript', linked_list.item(2)
     assert_equal 3, linked_list.size
   end
+
+  test 'remove_tail returns false when list is empty' do
+    linked_list = SinglyLinkedList.new
+    assert !linked_list.remove_tail
+  end
 end

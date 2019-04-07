@@ -121,6 +121,10 @@ class SinglyLinkedList
   end
 
   def remove_tail
+    if @size == 0
+      return false
+    end
+
     current_node = @head
 
     while current_node[:node_next] != @tail do
