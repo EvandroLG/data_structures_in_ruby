@@ -74,4 +74,18 @@ class SinglyLinkedListTest < Test::Unit::TestCase
     assert_equal nil, linked_list.item(3)
     assert_equal 3, linked_list.size
   end
+
+  test 'remove tail' do
+    linked_list = SinglyLinkedList.new
+    linked_list.add_last 'python'
+    linked_list.add_last 'ruby'
+    linked_list.add_last 'javascript'
+    linked_list.add_last 'lua'
+
+    linked_list.remove_tail
+    assert_equal 'python', linked_list.item(0)
+    assert_equal 'ruby', linked_list.item(1)
+    assert_equal 'javascript', linked_list.item(2)
+    assert_equal 3, linked_list.size
+  end
 end

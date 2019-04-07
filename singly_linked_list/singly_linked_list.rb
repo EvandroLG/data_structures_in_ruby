@@ -119,4 +119,17 @@ class SinglyLinkedList
 
     false
   end
+
+  def remove_tail
+    current_node = @head
+
+    while current_node[:node_next] != @tail do
+      current_node = current_node[:node_next]
+    end
+
+    @tail = current_node
+    @size = @size - 1
+
+    true
+  end
 end
