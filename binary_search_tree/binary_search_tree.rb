@@ -14,6 +14,14 @@ class BinarySearchTree
     }
   end
 
+  def find_height root
+    unless root
+      return -1
+    end
+
+    1 + [find_height(root[:left]), find_height(root[:right])].max
+  end
+
   public
   def insert value
     node = create_node value
@@ -69,5 +77,13 @@ class BinarySearchTree
     end
 
     found
+  end
+
+  def height
+    unless @root
+      return 0
+    end
+
+    find_height @root
   end
 end

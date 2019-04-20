@@ -32,4 +32,22 @@ class BinarySearchTreeTest < Test::Unit::TestCase
     assert bst.contains?(15)
     assert_equal false, bst.contains?(20)
   end
+
+  test 'height' do
+    bst = BinarySearchTree.new
+
+    assert_equal 0, bst.height
+
+    bst.insert 10
+    bst.insert 5
+    bst.insert 15
+
+    assert_equal 1, bst.height
+
+    bst.insert 20
+    bst.insert 25
+    bst.insert 10
+
+    assert_equal 3, bst.height
+  end
 end
