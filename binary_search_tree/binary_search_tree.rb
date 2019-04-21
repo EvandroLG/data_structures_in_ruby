@@ -14,6 +14,16 @@ class BinarySearchTree
     }
   end
 
+  def find_lca root, value_a, value_b
+    if root[:value] > value_a && root[:value] > value_b
+      return find_lca root[:left], value_a, value_b
+    elsif root[:value] < value_a && root[:value] < value_b
+      return find_lca root[:right], value_a, value_b
+    end
+
+    root
+  end
+
   def find_height root
     unless root
       return -1
@@ -85,5 +95,13 @@ class BinarySearchTree
     end
 
     find_height @root
+  end
+
+  def lca value_a, value_b
+    unless @root
+      return nil
+    end
+
+    find_lca @root, value_a, value_b
   end
 end

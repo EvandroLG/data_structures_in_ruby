@@ -50,4 +50,17 @@ class BinarySearchTreeTest < Test::Unit::TestCase
 
     assert_equal 3, bst.height
   end
+
+  test 'lca' do
+    bst = BinarySearchTree.new
+    assert_equal nil, bst.lca(10, 20)
+
+    bst.insert 10
+    bst.insert 5
+    bst.insert 15
+    bst.insert 25
+
+    output = bst.lca(5, 15)
+    assert_equal 10, output[:value]
+  end
 end
